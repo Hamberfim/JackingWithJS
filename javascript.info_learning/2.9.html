@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>javascript.info 2.9 Comparisons - the odd things</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
+  <body>
+
+    <!-- my script -->
+    <script>
+        /* 
+    Treat any comparison with undefined/null except the strict equality === with exceptional care.
+    Don’t use comparisons >= > < <= with a variable which may be null/undefined, unless you’re really sure of what you’re doing. 
+    If a variable can have these values, check for them separately.
+        */
+
+        alert(5 > 4);  // Obviously, true.
+        alert("apple" > "pineapple");  // Dictionary(Unicode order) comparison, hence false. "a" is smaller than "p".
+        alert("2" > "12");  // dictionary comparison, first char "2" is greater than the first char "1".
+        alert(undefined == null);  // true, Values null and undefined equal each other only.
+        alert(undefined === null);  // false, Strict equality is strict. Different types from both sides lead to false.
+        alert(null == "\n0\n");  // false, imilar to (4), null only equals undefined.
+        alert(null === +"\n0\n");  // false, Strict equality of different types.
+
+        // An equality check converts values using the numeric conversion (hence "0" becomes 0), while the explicit Boolean conversion uses another set of rules.
+        let a = 0;
+        let b = "0";
+        alert( Boolean(a) ); // false
+        alert( Boolean(b) ); // true
+        alert(a == b); // true!
+
+    </script>
+
+      
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>

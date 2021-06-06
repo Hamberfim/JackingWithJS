@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>javascript.info 2.13 Loops</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
+  <body>
+
+    <!-- my script -->
+    <script>
+        // // while loops
+        // let i = 3;
+        // while(i) {
+        //     alert(`i loop ${i}`);
+        //     i--;
+        // }
+
+        // let j = 3
+        // do{
+        //     alert(`j loop ${j}`);
+        //     j--;
+        // } while(j);
+
+        // // for loops
+        // for(let k = 0; k < 3; k++) {
+        //     alert(`k for loop ${k}`)
+        // }
+
+        // // break
+        // let sum = 0;
+        // while(true) {
+        //     let inputValue = Number(prompt("Enter a number: ", ' '));
+        //     if (!inputValue) {
+        //         break;
+        //     }
+        //     else {
+        //         sum += inputValue;
+        //     }
+        // }
+        // alert("Sum: " + sum);
+
+        // // continue
+        // for(let p = 0; p < 10; p++) {
+        //     if(p % 2 == 0) {  // simplified: (p % 2)
+        //         continue;
+        //     }
+        //     alert("P is now: " + p)
+        // }
+
+        // // label for break/continue
+        // outer: for (let i = 0; i < 3; i++) {
+        //     for (let j = 0; j < 3; j++) {
+        //     let input = prompt(`Value at coords (${i},${j})`, '');
+
+        //     // if an empty string or canceled, then break out of both loops
+        //     if (!input){
+        //         break outer; // (*)
+        //     } 
+
+        //     // do something with the value...
+        //     }
+        // }
+        // alert('Done!');
+
+        // task solutions -output even numbers from 2 to 10
+        for(let z = 2; z < 11;) {
+            alert("Z is: " + z);
+            z += 2;
+        }
+
+        let r = 2;
+        while(r < 11) {
+            alert("R is: " + r);
+            r +=2;
+        }
+
+    </script>
+      
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>

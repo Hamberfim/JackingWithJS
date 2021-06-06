@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>javascript.info 2.10 Conditional branching 2.11 logical operators</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
+  <body>
+
+    <!-- my script -->
+    <script>
+        // falsy
+        if(0) {
+            alert(false);
+        }
+        // truthy
+        if(1) {
+            alert(true);
+        }
+
+        // tenary 
+        let result = 0 ? true : false;  // falsy
+        alert(result);
+        result = 1 ? true : false;  // truthy
+        alert(result);
+
+        let age = prompt("Enter your age: ", 1);
+        let isDiscount = (age > 54) ? true: false;  // simplified: let isDiscount = age > 54;
+        alert(`Can you get a discount? ${isDiscount}`);
+
+        // mutiple tenary
+        age = prompt("Enter your age: ", 17);
+        let message = (age < 10) ? "Hi, kid" : (age < 18) ? "Hi, tean" : (age < 28) ? "Getting older" : (age < 40) ? "Mr.Mid-Life" : "Geezer";
+        alert(message);
+
+        // logical operators
+        let eyes = prompt("What color are your eyes? ");
+        let hair = prompt("what color is your hair? ");
+
+        if(eyes == 'blue' && hair == 'black' || hair == 'brown') {
+          alert("Hi blue eyes with ");
+        }
+        else if(eyes == 'brown' && hair == 'black' || hair == 'brown') {
+          alert("Hi brown eyes");
+        }
+        else if(eyes == 'grey' || hair == 'blond') {
+          alert("You have grey eyes or blond hair");
+        }
+        else {
+          alert("What unusual DNA.");
+        }
+
+
+
+    </script>
+      
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>

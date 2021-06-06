@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>javascript.info 2.8 operators: unary, binary, operand</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
+  <body>
+
+    <!-- my script -->
+    <script>
+        // pretty basic but note:
+        // An operand or argument is unary if it has a single operand i.e., -5 
+        // An operand or argument is binary  if it has a two operands i.e., 10 - 5
+        // if any of the operands is a string, then the other one is converted to a string
+        alert('5' + 2); // "52"
+        alert(2 + '5'); // "25"
+
+        // operators work one after another so the order in which the string is encountered is important
+        alert(2 + 2 + '5'); // "45" and not "225"
+        alert('2' + 2 + 5); // "225" and not "45"
+        // binary + is the only operator that converts number to strings in such a way. 
+        // Other arithmetic operators work only with numbers and always convert their operands to numbers
+        alert(12 - '2'); // 10, converts '2' to a number
+        alert('12' / '2'); // 6, converts both operands to numbers
+
+        // unary plus '+' symbol converts non-numbers into numbers
+        alert(+true); // 1
+        alert(+"");   // 0
+        // binary plus '+' concatenates strings
+        let strThree = "3";
+        let strFive = "5";
+        alert(strThree + strFive); // "35", the binary plus concatenates strings
+        // both values converted to numbers before the binary plus - parentheses are for explanation but are not nessisary: 'alert(+strThree + +strFive);''
+        alert((+strThree) + (+strFive));  // 8, same as conversion/casting: alert(Number(strThree) + Number(strFive));
+
+        // assignment as part of a expression
+        let c = 5 - (a = 3 + 1);
+        alert(a); // 4
+        alert(c); // 1
+
+        // chain assignments
+        let d, e, f;
+        d = e = f = 3 + 2;
+        alert(d);  // 5
+        alert(e);  // 5
+        alert(f);  // 5
+
+        // both are evaluated but only the result of the last one is returned
+        let z = (1 + 2, 3 + 4);
+        alert(z);  // 7 (the result of 3 + 4)
+
+        // task - The result should be 3.
+        let j = prompt("First number?", 1);
+        let k = prompt("Second number?", 2);
+        alert(j + k);  // 12
+        // solution
+        alert(Number(j) + Number(k));  // 3
+
+    </script>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>
