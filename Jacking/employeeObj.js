@@ -28,5 +28,5 @@ const empWilliam = {
 
 
 let foundEmp = findEmployee(empWilliam);
-console.log(foundEmp);
 console.log("Type is " + typeof(foundEmp));
+console.log(foundEmp);
