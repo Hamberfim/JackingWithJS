@@ -40,7 +40,7 @@ let personTwo = personsName[1];
 console.log("Name: " + personOne);
 console.log("Full name: " + personTwo);
 
-// anonymous array function
+// anonymous array function utilizing logic and boolean
 let paint  = function(width, height, isWall) {
     let area  =  width * height;
     let msg = "";
