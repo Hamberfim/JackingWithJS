@@ -1,3 +1,5 @@
+console.time('checkTime');
+
 let elMastHead = document.getElementById('mastHead');
 elMastHead.textContent = "JS Sandbox Masthead";
 
@@ -27,3 +29,5 @@ elHipsterTalk.textContent = "I'm baby kale chips trust fund listicle actually ve
 
 console.log([1, 2, 3, 4,]);  // Array
 console.log({a:1, b:2, c:3});  // object
+
+console.timeEnd('checkTime');  // first run 1.07788085...
