@@ -15,7 +15,10 @@ total += score3;
 const average = parseFloat(total / 3);
 
 // gather html content
-const html = ``;
+const html = `<p></p>
+<p></p>
+<p></p>
+<p></p>`;
 
 // write html content
 document.write();
