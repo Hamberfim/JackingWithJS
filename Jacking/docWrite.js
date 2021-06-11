@@ -16,5 +16,9 @@ const mpg = parseFloat(userMiles / galUsed);
 // populate label area of html doc
 let elMiles = document.getElementById('miles');
 elMiles.textContent = userMiles;
+
 let elGallons = document.getElementById('gallons');
+elGallons.textContent = galUsed;
+
 let elMPG = document.getElementById('mpg');
+elMPG.textContent = mpg;
