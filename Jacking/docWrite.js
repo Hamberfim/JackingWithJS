@@ -1,4 +1,8 @@
 "use strict";
+// refresh button
+function refresh(){
+    window.location.reload("Refresh");
+  }
 
 let masthead = "Miles Per Gallon";
 // populate masthead

@@ -18,7 +18,7 @@
             <div class="col-md-12 my-2">
                 <!-- masthead -->
                 <h1 id="masthead">MASTHEAD</h1>
-                
+
             </div>
         </div>
         <div class="row">
@@ -32,7 +32,10 @@
                         <p><label>Gallons: </label> <span id="gallons"></span></p>
                         <p><label>Estimated MPG: </label> <span id="mpg"></span></p>
                     </div>
-                    <em class="card-footer text-muted"><sub>Calulation based on user input.</sub> </em>
+                    <div class="card-footer text-muted">
+                        <p><em><sub>Calulation based on user input.</sub></em></p>
+                        <p><input type="button" value="Calculate Another MPG" onClick="refresh(this)"></p>
+                    </div>
                 </div>
             </div>
         </div>
