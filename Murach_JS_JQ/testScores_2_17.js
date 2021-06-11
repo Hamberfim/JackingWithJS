@@ -15,10 +15,10 @@ total += score3;
 const average = parseFloat(total / 3);
 
 // gather html content
-const html = `<p>Score 1: ${score1}</p>
-              <p>Score 2: ${score2}</p>
-              <p>Score 2: ${score3}</p>
-              <p>Average for the htree Scores: ${average}</p>`;
+const html = `<p>Score 1 = ${score1}</p>
+              <p>Score 2 = ${score2}</p>
+              <p>Score 2 = ${score3}</p>
+              <p>Average for the three Scores = ${average.toFixed(2)}</p>`;
 
 // write html content
-document.write();
+document.write(html);
