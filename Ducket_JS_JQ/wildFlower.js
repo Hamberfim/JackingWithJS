@@ -1,3 +1,4 @@
+"use strict";
 // vars for the greeting message
 let greeting = "Howdy! ";
 let userName = "Anthony";

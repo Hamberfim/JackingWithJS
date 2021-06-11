@@ -1,3 +1,4 @@
+"use strict";
 // rv park rental script
 // rv park constructor notation
 function RvRentalPark(rvParkName, rvSpaces, booked) {
