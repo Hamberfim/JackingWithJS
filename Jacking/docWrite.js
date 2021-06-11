@@ -11,11 +11,20 @@ elMasthead.textContent = `${masthead}`;
 
 // prompt user - converting to float
 // get miles driven 
-const userMiles = parseFloat(prompt('Enter the number of miles driven: ', 0));
+let userMiles = parseFloat(prompt('Enter the number of miles driven: ', 0));
 // get gallons used
-const galUsed = parseFloat(prompt('Enter the number of gallons used: ', 0));
+let galUsed = parseFloat(prompt('Enter the number of gallons used: ', 0));
 // calculate mpg
-const mpg = parseFloat(userMiles / galUsed);
+let mpg = 0;
+if(userMiles >=0 && galUsed >= 0) {
+   mpg = parseFloat(userMiles / galUsed);
+}
+else {
+    userMiles = 0;
+    galUsed = 0;
+    mpg = 0;
+}
+
 
 // populate label area of html doc
 let elMiles = document.getElementById('miles');
