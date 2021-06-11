@@ -9,5 +9,6 @@ elMasthead.textContent = `${masthead}`;
 // get miles driven
 const userMiles = parseFloat(prompt('Enter the number of miles driven: '));
 // get gallons used
-const galUsed = parseFloat(promt('Enter the number of gallons used: '));
-
+const galUsed = parseFloat(prompt('Enter the number of gallons used: '));
+// calculate mpg
+const mpg = userMiles / galUsed;
