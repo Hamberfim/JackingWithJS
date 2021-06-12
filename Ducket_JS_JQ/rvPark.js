@@ -16,6 +16,22 @@ let lakeFront = new RvRentalPark('Lake Front RV Park', 22, 12);
 let pines = new RvRentalPark('The Pines RV Park', 85, 33);
 let hillCo = new RvRentalPark('Hill Country RV Park', 28, 5);
 
+// mini list header
+let elCardHeader5 = document.getElementById('cardHeader0');
+elCardHeader5.textContent = 'Quick Comparison';
+// mini list
+let elOasisDetails = document.getElementById('details1');
+elOasisDetails.textContent = oasis.rvParkName + ' - available spaces: ' + oasis.checkAvail();
+
+let elLakeFrontDetails = document.getElementById('details2');
+elLakeFrontDetails.textContent = lakeFront.rvParkName + ' - available spaces: ' + lakeFront.checkAvail();
+
+let elPinesDetails = document.getElementById('details3');
+elPinesDetails.textContent = pines.rvParkName + ' - available spaces: ' + pines.checkAvail();
+
+let elHillCoDetails = document.getElementById('details4');
+elHillCoDetails.textContent = hillCo.rvParkName + ' - available spaces: ' + hillCo.checkAvail();
+
 // Oasis RV
 let elCardHeader1 = document.getElementById('cardHeader1');
 elCardHeader1.textContent = oasis.rvParkName;
