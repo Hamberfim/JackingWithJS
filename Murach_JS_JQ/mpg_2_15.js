@@ -34,4 +34,4 @@ let elGallons = document.getElementById('gallons');
 elGallons.textContent = galUsed;
 
 let elMPG = document.getElementById('mpg');
-elMPG.textContent = mpg;
+elMPG.textContent = mpg.toFixed(2);;
