@@ -55,7 +55,7 @@ let parkArray = [oasis, pines, lake, river];
 
 // header
 document.write(`<div class="container">
-                    <div class="row">
+                    <div class="row text-white bg-info">
                     <div class="col-12-md my-2 mx-5">
                         masthead
                     </div>
@@ -84,9 +84,9 @@ for (let i = 0; i < parkArray.length; i++) {
     //elLoopContent.textContent = document.write(html);
     document.write(html);
 };
-document.write(`<div class="row">
+document.write(`<div class="row text-white bg-info">
                     <div class="col-12-md my-2 mx-5">
                         footer
-                    </div>
+                    </div>  
                 </div>
             </div>`);
