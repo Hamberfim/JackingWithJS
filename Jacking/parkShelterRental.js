@@ -15,6 +15,7 @@ function Park(name, address, city, state, zip, numShelterRental, reserved) {
 
 }
 
+// create park objects
 let oasis = new Park(
     'Oasis Park',
     '1122 Boogie Av.',
@@ -60,8 +61,17 @@ let mountView = new Park(
     9,
     6);
 
+let cactus = new Park(
+    'Cactus Bend',
+    '6321 Cactus Bend Pl.',
+    'Tempe',
+    'AZ',
+    '85281',
+    14,
+    7);
+
 // park shelter array
-let parkArray = [oasis, pines, lake, river, mountView];
+let parkArray = [oasis, pines, lake, river, mountView, cactus];
 
 // generate html thru a loop and populate it with the objects in the array
 function DisplayParks() {
