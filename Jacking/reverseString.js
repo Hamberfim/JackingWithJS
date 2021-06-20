@@ -10,5 +10,5 @@ function reverseString(textVal){
 
 }
 textVal = reverseString(textVal);
-let elTextCopy = document.getElementById('textCopy');
+let elTextCopy = document.getElementById('results');
 elTextCopy.textContent = textVal;
