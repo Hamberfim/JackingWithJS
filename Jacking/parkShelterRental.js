@@ -77,7 +77,7 @@ let parkArray = [oasis, pines, lake, river, mountView, cactus];
 function DisplayParks() {
     let elParkName = "";
     for (let i = 0; i < parkArray.length; i++) {
-        console.log(parkArray[i]);
+        // console.log(parkArray[i]);
         elParkName += "<span class='text-primary text-uppercase h5'><a href='#'>" + parkArray[i].name + "</a></span>" + "<br/>";
         elParkName += "<span class='text-secondary'>" + parkArray[i].address + " " + parkArray[i].city + ", " + parkArray[i].state + " " + parkArray[i].zip + "</span><br/>";
         elParkName += "<span class='text-secondary'>Number of Shelters: </span>" + "<strong>" + parkArray[i].numShelterRental + "</strong><br/>";
