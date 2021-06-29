@@ -130,7 +130,7 @@ function DisplayParks() {
             isCheckedPlay = "<strong>N/A</strong>";
         }
 
-        // html -- placeholder on href
+        // html -- placeholder on href for now
         elParkName += "<span class='text-primary text-uppercase h5'><a href='index.html&?" + parkArray.indexOf(parkArray[i]) + "'target='_blank'>" + parkArray[i].name + "</a></span>" + "<br/>";
         elParkName += "<span class='text-secondary'>" + parkArray[i].address + " " + parkArray[i].city + ", " + parkArray[i].state + " " + parkArray[i].zip + "</span><br/>";
         elParkName += "<span class='text-secondary'>Number of Shelters: </span>" + "<strong>" + parkArray[i].numShelterRental + "</strong><br/>";
