@@ -131,7 +131,7 @@ function DisplayParks() {
         }
 
         // html -- placeholder on href for now
-        elParkName += "<span class='text-primary text-uppercase h5'><a href='index.html&?" + parkArray.indexOf(parkArray[i]) + "'target='_blank'>" + parkArray[i].name + "</a></span>" + "<br/>";
+        elParkName += "<span class='text-primary text-uppercase h5'><a href='" + parkArray.indexOf(parkArray[i]) + "'target='_blank'>" + parkArray[i].name + "</a></span>" + "<br/>";
         elParkName += "<span class='text-secondary'>" + parkArray[i].address + " " + parkArray[i].city + ", " + parkArray[i].state + " " + parkArray[i].zip + "</span><br/>";
         elParkName += "<span class='text-secondary'>Number of Shelters: </span>" + "<strong>" + parkArray[i].numShelterRental + "</strong><br/>";
         elParkName += "<span class='text-danger'><em>Shelters available to reserve: </em></span><strong>" + parkArray[i].checkAvail() + "</strong></span><br/>";
@@ -144,3 +144,7 @@ function DisplayParks() {
 };
 // call the function to display the park shelters
 DisplayParks();
+
+function DisplayParkDetails(item) {
+    parkArray[item].name;
+};
