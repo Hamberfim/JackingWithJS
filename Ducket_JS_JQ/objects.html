@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="container">
+        <div class="row">
+            <!-- Performance output of object using (function) constructor notation with properties & methods -->
+            <div class="col-12-sm my-3">
+                <div class="card">
+                    <h4 class="card-header text-white bg-success">Current Show</h4>
+                    <div class="card-body">
+                        <div class="h3" id="showTitle"></div>
+                        <div class="text-danger h6" id="remainingSeats"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <!-- boxApples output of object using literal notation with properties & methods -->
+            <div class="col-12-sm my-3">
+                <div class="card">
+                    <h4 class="card-header text-white bg-info">Fruit & Veg Stand Items</h4>
+                    <div class="card-body">
+                        <div class="h5" id="nameItems"></div>
+                        <div class="text-success h6" id="qtyItems"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- my JavaScript -->
+    <script>
+        // create an object using literal notation then add properties
+        let car = {};
+        car.name = "Fiat";
+        car.color = "black";
+        car.isManualTrans = true;
+        console.log(car);
+        console.log("The " + car.name + " is " + car.color);
+
+        // create an object using constructor notation then add properties & methods
+        let boxOranges = new Object();
+        boxOranges.name = "Box of Oranges";
+        boxOranges.qty = 40;
+        boxOranges.sold = 5;
+        boxOranges.remaining = function() {
+            return this.qty - this.sold;
+        };
+        console.log(boxOranges);
+        console.log("We have sold " + boxOranges.sold + " from the " + boxOranges.name);
+        console.log("The " + boxOranges.name + " has " + boxOranges.remaining() + " left after morning sales.");
+
+        // create an object using literal notation with properties & methods
+        let boxApples = {
+            name: "box of apples",
+            qty: 16,
+            priceEach: .99,
+            sold: 3,
+            remaining: function() {
+                return this.qty - this.sold;
+            },
+            totalPrice: function() {
+                return this.sold * this.priceEach;
+            }
+        };
+        console.log("The " + boxApples.name + " originally had " + boxApples.qty);
+        console.log("We sold " + boxApples.sold + " apples @ " + boxApples.priceEach + " cents each for a total of $" + boxApples.totalPrice().toFixed(2));
+        console.log("Leaving " + boxApples.remaining() + " apples left to sale.");
+
+        // create an object using (function) constructor notation with properties & methods
+        function Performance (name, seats, reserved) {
+            this.name = name;
+            this.seats = seats;
+            this.reserved = reserved;
+            this.checkRemaining = function() {
+                return this.seats - this.reserved;
+            };
+        }
+        // call the function to create the objects
+        let comedyShow = new Performance("Jim Gaffagan", 200, 126);
+        console.log("The " + comedyShow.name + " show has only " + comedyShow.checkRemaining() + " seats left.");
+
+        // comedy show some ouput to html doc
+        let elShowTitle = document.getElementById('showTitle');
+        elShowTitle.textContent = comedyShow.name + " Comedy Special";
+        let elRemainingSeats = document.getElementById('remainingSeats');
+        elRemainingSeats.textContent = "Buy tickets now! There are only " + comedyShow.checkRemaining() + " seats remaining";
+
+        // boxApples show some output to html doc
+        let elNameItems = document.getElementById('nameItems');
+        elNameItems.textContent = boxApples.name.toUpperCase();
+        let elQtyItems = document.getElementById('qtyItems');
+        elQtyItems.textContent = "Qty Available: " + boxApples.remaining() + " @ " + boxApples.priceEach + " each."
+
+
+    </script>
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>
