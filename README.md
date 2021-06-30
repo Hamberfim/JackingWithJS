@@ -1,2 +1,2 @@
 ### Jacking With JavaSript
-<p>Re-training in JavaScript and JQuery after a very long hiatus.</p>
+<pRefresher - JavaScript and JQuery after a very long hiatus</p>
