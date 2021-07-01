@@ -12,8 +12,17 @@
   <body>
       <div class="container">
           <div class="row">
-              <div class="col-12-sm">
-                  
+              <div class="col-12-sm my-2">
+                  <div class="card">
+                      <h5 class="card-header text-white bg-info" id="headerTitle">Hotel Stay Charges</h5>
+                      <div class="card-body">
+                        <div class="text-success" id="purchasedItem0">item 0 here</div>
+                        <div class="text-success" id="purchasedItem1">item 1 here</div>
+                        <div class="text-success" id="purchasedItem2">item 2 here</div>
+                        <hr>
+                        <div class="text-danger" id="purchasedTotal">Total here</div>
+                      </div>
+                  </div>
               </div>
           </div>
       </div>
@@ -40,7 +49,17 @@
         console.log("Meal from kitchen cost $" + objInArr[2].mealKitchen.toFixed(2));
 
         // some output to html
+        let elPurchasedItem0 = document.getElementById('purchasedItem0');
+        elPurchasedItem0.textContent = "Phone Charges: $" + objInArr[2].phoneCharge.toFixed(2);
 
+        let elPurchasedItem1 = document.getElementById('purchasedItem1');
+        elPurchasedItem1.textContent = "Vending Snacks: $" + objInArr[2].vendSnacks.toFixed(2);
+
+        let elPurchasedItem2 = document.getElementById('purchasedItem2');
+        elPurchasedItem2.textContent = "Dinner for two: $" + objInArr[2].mealKitchen.toFixed(2);
+
+        let elPurchasedTotal =  document.getElementById('purchasedTotal');
+        elPurchasedTotal.textContent = "Total charges: $" + (objInArr[2].phoneCharge + objInArr[2].vendSnacks + objInArr[2].mealKitchen).toFixed(2);
 
     </script>
 
