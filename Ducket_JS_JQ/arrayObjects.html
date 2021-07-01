@@ -14,7 +14,7 @@
           <div class="row">
               <div class="col-12-sm my-2">
                   <div class="card">
-                      <h5 class="card-header text-white bg-info" id="headerTitle">Hotel Stay Charges</h5>
+                      <h5 class="card-header text-white bg-info" id="headerTitle">header title here</h5>
                       <div class="card-body">
                         <div class="text-success" id="purchasedItem0">item 0 here</div>
                         <div class="text-success" id="purchasedItem1">item 1 here</div>
@@ -58,8 +58,11 @@
         let elPurchasedItem2 = document.getElementById('purchasedItem2');
         elPurchasedItem2.textContent = "Dinner for two: $" + objInArr[2].mealKitchen.toFixed(2);
 
-        let elPurchasedTotal =  document.getElementById('purchasedTotal');
+        let elPurchasedTotal = document.getElementById('purchasedTotal');
         elPurchasedTotal.textContent = "Total charges: $" + (objInArr[2].phoneCharge + objInArr[2].vendSnacks + objInArr[2].mealKitchen).toFixed(2);
+        let today = new Date();
+        let elHeaderTitle = document.getElementById('headerTitle');
+        elHeaderTitle.textContent = "Hotel Stay Charges - " + today.getDay() + "/" + today.getFullYear();
 
     </script>
 
