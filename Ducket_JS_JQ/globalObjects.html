@@ -59,6 +59,50 @@
         let randNum = Math.floor(Math.random() * 10) + 1;
         numMsg += "Random number: " + randNum + "<br />";
 
+        // date objects
+        let dob = new Date(1966, 3, 3, 07,30,15);  // zero index on Month
+        let today = new Date();
+        numMsg += "DOB: " + dob + "<br />";
+        numMsg += "Now: " + today + "<br />";
+        numMsg += "Human Readable Now: " + today.toDateString() + "<br />";
+        numMsg += "Year: " + today.getFullYear() + "<br />";
+        let dayOfWeek = today.getDay();
+        let day = "";
+        switch (dayOfWeek) {
+          case 0:
+            day = "Sunday";
+            break;
+
+          case 1:
+            day = "Monday";
+            break;
+
+          case 2:
+            day = "Tuesday";
+            break;
+          
+          case 3:
+            day = "Wednesday";
+            break;
+
+          case 4:
+            day = "Thursday";
+            break;
+
+          case 5:
+            day = "Friday";
+            break;
+
+          case 6:
+            day = "Saturday";
+            break;
+        
+          default:
+            day = "Not Sure"
+            break;
+        }
+        numMsg += "Day: " + day + "<br />";
+
         let elNumberBody = document.getElementById('numberBody');
         elNumberBody.innerHTML = numMsg;
 
