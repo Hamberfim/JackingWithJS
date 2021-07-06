@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>window object, document object, global objects</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-12-sm my-2">
+                <div class="card">
+                    <h4 class="card-header bg-info" id="cardHeader1">Browser Object Info:</h4>
+                    <div class="card-body" id="cardBody1">body content goes here</div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12-sm my-2">
+                <div class="card">
+                    <h4 class="card-header bg-warning" id="cardHeader2">Document Object Info:</h4>
+                    <div class="card-body" id="cardBody2">body content goes here</div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12-sm my-2">
+                <div class="card">
+                    <h4 class="card-header bg-danger text-white" id="cardHeader3">Document Object Info:</h4>
+                    <div class="card-body" id="cardBody3">body content goes here</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--My JavaScript -->
+    <script>
+        // browser/window object
+        let winMsg = "<strong>Browser Width: </strong>" + window.innerWidth + "<br />";
+        winMsg += "<strong>Browser Height: </strong>" + window.innerHeight + "<br />";
+        winMsg += "<strong>Monitor Screen Width: </strong>" + window.screen.width + "<br />";
+        winMsg += "<strong>Monitor Screen Height: </strong>" + window.screen.height + "<br />";
+        winMsg += "<strong>Pointer X position: </strong>" + window.screenX + "<br />";
+        winMsg += "<strong>Pointer Y position: </strong>" + window.screenY + "<br />";
+        winMsg += "<strong>Browser History: </strong>" + window.history + "<br />";
+        winMsg += "<strong>Browser History Length: </strong>" + window.history.length + "<br />";
+
+        let ElCardBody1 = document.getElementById('cardBody1');
+        ElCardBody1.innerHTML = winMsg; // innerHTML can be a security risk
+
+        // document object
+        let docMsg = "Page title: " + document.title + "<br />";
+        docMsg += "Page URL: <br />" + document.URL + "<br />";
+        docMsg += "Page last modified: " + document.lastModified + "<br />";
+
+        let ElCardBody2 = document.getElementById('cardBody2');
+        ElCardBody2.innerHTML = docMsg; // innerHTML can be a security risk
+
+        // global objects
+        let phrase = "welcome home strangers";
+        let phraseLen = phrase.length;
+        let phraseSplit = phrase.split(' ');
+        let phraseUpper = phrase.toUpperCase();
+        let phraseSub = phrase.substring(0, 7);
+        let phraseReplace = phrase.replace('come', "l you're ");
+        phrase += "<br />Number of Character/spaces: " + phraseLen + "<br />";
+        phrase += "Phrase Split: " + phraseSplit + "<br />";
+        phrase += "To Upper Case: " + phraseUpper + "<br />";
+        phrase += "Get Substring: " + phraseSub + "<br />";
+        phrase += "Replace: " + phraseReplace + "<br />";
+
+        let ElCardBody3 = document.getElementById('cardBody3');
+        ElCardBody3.innerHTML = "Base String: " + phrase;  // innerHTML can be a security risk
+
+    </script>
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
+</body>
+
+</html>
