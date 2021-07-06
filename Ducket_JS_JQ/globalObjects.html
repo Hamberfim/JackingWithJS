@@ -19,14 +19,40 @@
                   </div>
               </div>
           </div>
+          <div class="row">
+            <div class="col-12-sm my-2">
+                <div class="card">
+                    <h4 class="card-header" id="numberHeader"></h4>
+                    <div class="card-body" id="numberBody"></div>
+                </div>
+            </div>
+        </div>
       </div>
     <!-- My JavaScript -->
     <script>
       // String global
         let myString = "pizza party";
-        let strMsg = "";
+        let strSplitLen = myString.split(' ').join('').length;  // split on space, join with no space, get length
+        let strSplit = myString.split(' ');
+        let strSub = myString.substring(6, 11);  // zero index start
+        let strMsg = myString  + " = " + strSplitLen + "<br />";
+        strMsg += strSplit[0].toUpperCase() + " " + strSplit[1].toUpperCase() + "<br />";
+        strMsg += strSub + "<br />";
+        strMsg += strSub.replace('p', 'f');
 
-        
+        let elStringBody = document.getElementById('stringBody');
+        elStringBody.innerHTML = strMsg;
+
+        // Number global
+        let myDecimal = 101.097654;
+        let numMsg = "Original Decimal: " + myDecimal + "<br />";
+        numMsg += "isNaN(myDecimal): " + isNaN(myDecimal) + "<br />";
+        numMsg += "isNaN(myString): " + isNaN(myString) + "<br />";
+        numMsg += "toFixed(3): " + myDecimal.toFixed(3) + "<br />"
+        numMsg += "toPrecision(5): " + myDecimal.toPrecision(5);
+
+        let elNumberBody = document.getElementById('numberBody');
+        elNumberBody.innerHTML = numMsg;
 
     </script>
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
