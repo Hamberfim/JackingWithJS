@@ -48,8 +48,16 @@
         let numMsg = "Original Decimal: " + myDecimal + "<br />";
         numMsg += "isNaN(myDecimal): " + isNaN(myDecimal) + "<br />";
         numMsg += "isNaN(myString): " + isNaN(myString) + "<br />";
-        numMsg += "toFixed(3): " + myDecimal.toFixed(3) + "<br />"
-        numMsg += "toPrecision(5): " + myDecimal.toPrecision(5);
+        numMsg += "toFixed(3): " + myDecimal.toFixed(3) + "<br />";
+        numMsg += "toPrecision(5): " + myDecimal.toPrecision(5) + "<br />";
+
+        // Math object
+        numMsg += "Nearest Int: " + Math.round(myDecimal) + "<br />";
+        numMsg += "Ceiling : " + Math.ceil(myDecimal) + "<br />";
+        numMsg += "Floor : " + Math.floor(myDecimal) + "<br />";
+        numMsg += "Square Root: " + Math.sqrt(myDecimal) + "<br />";
+        let randNum = Math.floor(Math.random() * 10) + 1;
+        numMsg += "Random number: " + randNum + "<br />";
 
         let elNumberBody = document.getElementById('numberBody');
         elNumberBody.innerHTML = numMsg;
