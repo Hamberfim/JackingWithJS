@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Title</title>
+    <title>Spread Operator, filter, foreach on an array</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -64,11 +64,11 @@
 
         console.log('Day times: ' + amTimes);
         let elDayTimes =document.getElementById('dayTimes');
-        elDayTimes.textContent = "Day time travel: " + amTimes;
+        elDayTimes.textContent = "AM travel times: " + amTimes;
         
         console.log('Night times: ' + pmTimes);
         let elNightTimes =document.getElementById('nightTimes');
-        elNightTimes.textContent = "Night time travel: " + pmTimes;
+        elNightTimes.textContent = "PM travel times: " + pmTimes;
 
         // flight prices - find a good deal
         let flightPrices= [189, 200, 278, 470, 420, 349, 566, 370, 788, 205, 228, 222];
@@ -107,8 +107,6 @@
         }
 
         flightPrices.forEach(findGoodDeal);
-
-        
     </script>
 
 
