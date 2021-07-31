@@ -20,29 +20,28 @@
                 <div class="card my-2">
                     <h3 class="card-header bg-warning">BASIC Read in your File:</h3>
                     <div class="card-body">
-                        <input class="btn" type="file" id="file-input1" />
-                        <button class="btn btn-secondary" id="parse-button1">Parse File</button>
-                        <pre class="my-5 mx-3" id="file-contents1"><!-- populate content here --></pre>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-12-md">
-                <!-- File Meta data -->
-                <div class="card my-2">
-                    <h3 class="card-header bg-warning">File Reader:</h3>
-                    <div class="card-body">
-                        <input class="btn" type="file" id="file-input2" />
-                        <button class="btn btn-secondary" id="parse-button2">Parse File</button>
-                        <pre class="my-5 mx-3" id="file-contents2"><!-- populate content here --></pre>
+                        <input class="btn" type="file" id="file-input" />
+                        <button class="btn btn-secondary" id="parse-button">Parse File</button>
+                        <!-- <pre class="my-5 mx-3" id="file-contents"> populate content here </pre> -->
+                        <div class="col my-1 mx-3">
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <tr id="file-fieldHeaders">
+                                        <!-- populate table header here -->
+                                    </tr>
+                                    <tbody id="file-contents">
+                                        <!-- populate table content here -->
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
     <!-- My JavaScript -->
-    <script src="readCSV.js"></script>
+    <script src="readCSVsingle.js"></script>
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
