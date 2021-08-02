@@ -18,7 +18,7 @@ document.querySelector("#parse-button").addEventListener('click', function () {
 
         let titles = "";
         for (let i = 0; i < headerTitleList.length; i++) {
-            titles += `<th class="text-nowrap">${headerTitleList[i]}</th>`;
+            titles += `<th scope="col" class="text-nowrap">${headerTitleList[i]}</th>`;
 
         }
         document.getElementById('file-fieldHeaders').innerHTML = titles;
@@ -40,12 +40,16 @@ document.querySelector("#parse-button").addEventListener('click', function () {
         // console.log(rows);
 
         // TODO: NEEDS FIXED - table breaks-up in markup
-        let templateFields = "";
+        let templateFields = "<tr>";
         for (let i = 0; i < rows.length; i++) {
             let rowItems = rows[i].split(",");
-            for (let index = 0; index < rowItems.length; index++) {
-                templateFields += `<td>${rowItems[index]}</td>`;
-
+            for (let index = 0; index <= rowItems.length; index++) {
+                if(index < rowItems.length) {
+                    templateFields += `<td>${rowItems[index]}</td>`;
+                } else if(index >= rowItems.length) {
+                    templateFields += `<tr>`;
+                }
+                
             }
 
         }
