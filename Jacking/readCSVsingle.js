@@ -37,9 +37,9 @@ document.querySelector("#parse-button").addEventListener('click', function () {
             rows = itemsList.split("\r"); // split on each row
 
         }
-        // console.log(rows);
+        //
 
-        // TODO: NEEDS FIXED - table breaks-up in markup
+        // 
         let templateFields = "<tr>";
         for (let i = 0; i < rows.length; i++) {
             let rowItems = rows[i].split(",");
@@ -53,7 +53,7 @@ document.querySelector("#parse-button").addEventListener('click', function () {
             }
 
         }
-        // console.log(templateFields);
+
         document.getElementById('file-contents').innerHTML = templateFields;
 
     });
