@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Simple Knockout js View Model Example</title>
+    <link rel="stylesheet" href="/">
+  </head>
+  <body>
+    <!-- This is a *view* - HTML markup that defines the appearance of your UI -->
+    <p>First name: <strong data-bind="text: firstName">todo</strong></p>
+    <p>Last name: <strong data-bind="text: lastName">todo</strong></p>
+
+    <!-- array population -->
+    <div><span data-bind="html: people"></span></div>
+    
+    <!-- knockout.js 3.5.1 -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.5.1/knockout-latest.js" integrity="sha512-2AL/VEauKkZqQU9BHgnv48OhXcJPx9vdzxN1JrKDVc4FPU/MEE/BZ6d9l0mP7VmvLsjtYwqiYQpDskK9dG8KBA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script>
+    // This is a simple *viewmodel* in JavaScript for knockout.js
+    function AppViewModel() {
+        this.firstName = "Bert";
+        this.lastName = "Bertington";
+
+        let fName = ["Larry", "Jane", "Paul", "Sarah"];
+        let lName = ["Kandihar", "Smith", "Jones", "McKinney"];
+
+        let people = "";
+
+        for (let i = 0; (i < fName.length) && (i < lName.length); i++) {
+            this.fName = fName[i];
+            people += `<strong> ${this.fName}</strong>`;
+
+            if(i < lName.length - 1) {
+                this.lName = lName[i];
+                people += `<strong> ${this.lName}</strong>, `;
+            } else {
+                this.lName = lName[i];
+                people += `<strong> ${this.lName}</strong>`;
+            }
+        }
+
+        this.people = people;
+    }
+
+    // Activates knockout.js
+    ko.applyBindings(new AppViewModel());
+  </script>
+  </body>
+</html>
