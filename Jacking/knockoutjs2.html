@@ -19,25 +19,37 @@
         <div class="row row-cols-1">
             <div class="col-md-12">
                 <!-- This is a *view* - HTML markup that defines the appearance of your UI -->
-                <h2>Your seat reservations</h2>
+                <h2>Number of current seat reserved: (<span data-bind="text: seats().length"></span>)</h2>
                 <table class="table table-responsive table-striped">
                     <thead class="table-light">
                         <tr>
                             <th>Passenger name</th>
                             <th>Meal</th>
                             <th class="text-end">Surcharge</th>
+                            <th>Delete</th>
                         </tr>
                     </thead>
                     <!-- Todo: Generate table body -->
                     <tbody data-bind="foreach: seats">
                         <tr>
-                            <td data-bind="text: name" class="text-start"></td>
-                            <td data-bind="text: meal().mealName" class="text-start"></td>
-                            <td data-bind="text: meal().price" class="text-end"></td>
+                            <td class="text-start"><input data-bind="value: name" /></td>
+                            <td class="text-start">
+                                <select
+                                    data-bind="options: $root.availableMeals, value: meal, optionsText: 'mealName'"></select>
+                            </td>
+                            <td data-bind="text: formattedPrice" class="text-end"></td>
+                            <td><a href="#" data-bind="click: $root.removeSeat">Remove</a></td>
                         </tr>
                     </tbody>
                 </table>
-                <button data-bind="click: addSeat" class="btn btn-dark btn-lg">Reserve Another Seat</button>
+                <div class="text-end">
+                    <h3 data-bind="visable: totalSurcharge() > 0">
+                        Total Cost: $<span data-bind="text: totalSurcharge().toFixed(2)" class="fw-bold"></span>
+                    </h3>
+                </div>
+                <br>
+                <!-- limit the number of reservations that can be added -->
+                <button data-bind="click: addSeat, enable: seats().length < 10" class="btn btn-dark btn-lg">Reserve Another Seat</button>
             </div>
         </div>
     </div>
@@ -56,6 +68,12 @@
             let self = this;
             self.name = name;
             self.meal = ko.observable(initialMeal);
+
+            // format price logic
+            self.formattedPrice = ko.computed(function () {
+                var price = self.meal().price;
+                return price ? "$" + price.toFixed(2) : "None";
+            });
         }
 
         // Overall viewmodel for this screen, along with initial state
@@ -95,9 +113,22 @@
             ]);
 
             // operations add reserved Seat
-            self.addSeat = function() {
-                self.seats.push(new SeatReservation("", self.availableMeals[1]));
+            self.addSeat = function () {
+                self.seats.push(new SeatReservation("", self.availableMeals[0]));
+                self.removeSeat = function (seat) {
+                    self.seats.remove(seat)
+                }
             }
+
+            // total computed
+            self.totalSurcharge = ko.computed(function () {
+                var total = 0;
+                for (var i = 0; i < self.seats().length; i++) {
+                    total += self.seats()[i].meal().price;
+                }
+                return total;
+            });
+
         }
 
         ko.applyBindings(new ReservationsViewModel());
