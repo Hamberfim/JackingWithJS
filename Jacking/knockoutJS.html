@@ -1,68 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Simple Knockout js View Model Example</title>
-    <link rel="stylesheet" href="/">
-  </head>
-  <body>
-    <!-- This is a *view* - HTML markup that defines the appearance of your UI -->
-    <p>First name: <input data-bind="value: firstName"></p>
-    <p>Last name: <input data-bind="value: lastName"></p>
 
-    <p>First name: <strong data-bind="text: firstName">todo</strong></p>
-    <p>Last name: <strong data-bind="text: lastName">todo</strong></p>
-    <p>Full Name: <strong data-bind="text: fullName">todo</strong></p>
-    <button data-bind="click: capitalizeLastName">Last Name in Caps</button>
-    <br>
-    <br>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Simple Knockout js View Model Example</title>
+  <link rel="stylesheet" href="/">
+</head>
 
-    <!-- array population -->
-    <div><span data-bind="html: people"></span></div>
-    
-    <!-- knockout.js 3.5.1 -->
-	<script src="knockout-3.5.1.js" integrity="sha512-2AL/VEauKkZqQU9BHgnv48OhXcJPx9vdzxN1JrKDVc4FPU/MEE/BZ6d9l0mP7VmvLsjtYwqiYQpDskK9dG8KBA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<body>
+  <!-- This is a *view* - HTML markup that defines the appearance of your UI -->
+  <p>First name: <input data-bind="value: firstName"></p>
+  <p>Last name: <input data-bind="value: lastName"></p>
+
+  <p>First name: <strong data-bind="text: firstName">todo</strong></p>
+  <p>Last name: <strong data-bind="text: lastName">todo</strong></p>
+  <p>Full Name: <strong data-bind="text: fullName">todo</strong></p>
+  <button data-bind="click: capitalizeLastName">Last Name in Caps</button>
+  <br>
+  <br>
+
+  <!-- array population -->
+  <div><span data-bind="html: people"></span></div>
+
+  <!-- knockout.js 3.5.1 -->
+  <script src="knockout-3.5.1.js"></script>
   <script>
     // This is a simple *viewmodel* in JavaScript for knockout.js
     function AppViewModel() {
-    this.firstName = ko.observable("Bert");
-    this.lastName = ko.observable("Bertington");
-    
-    this.fullName = ko.computed(function() {
-        return this.firstName() + " " + this.lastName();    
-    }, this);
-    
-    this.capitalizeLastName = function() {
-        let currentVal = this.lastName();  // read lastName current value
-        this.lastName(currentVal.toUpperCase());  // write modified value
-    };
-    
-    // messing around
-    let fName = ["Larry", "Jane", "Paul", "Sarah"];
-    let lName = ["Kandihar", "Smith", "Jones", "McKinney"];
-    
-    let people = "";
-    
-    for (let i = 0; (i < fName.length) && (i < lName.length); i++) {
+      this.firstName = ko.observable("Bert");
+      this.lastName = ko.observable("Bertington");
+
+      this.fullName = ko.computed(function () {
+        return this.firstName() + " " + this.lastName();
+      }, this);
+
+      this.capitalizeLastName = function () {
+        let currentVal = this.lastName(); // read lastName current value
+        this.lastName(currentVal.toUpperCase()); // write modified value
+      };
+
+      // messing around
+      let fName = ["Larry", "Jane", "Paul", "Sarah"];
+      let lName = ["Kandihar", "Smith", "Jones", "McKinney"];
+
+      let people = "";
+
+      for (let i = 0;
+        (i < fName.length) && (i < lName.length); i++) {
         this.fName = fName[i];
         people += `<strong> ${this.fName}</strong>`;
-        
-        if(i < lName.length - 1) {
-            this.lName = lName[i];
-            people += `<strong> ${this.lName}</strong>, `;
-        } else {
-            this.lName = lName[i];
-            people += `<strong> ${this.lName}</strong>`;
-        }
-    }
-    
-    this.people = people;
-}
 
-// Activates knockout.js
-ko.applyBindings(new AppViewModel());
+        if (i < lName.length - 1) {
+          this.lName = lName[i];
+          people += `<strong> ${this.lName}</strong>, `;
+        } else {
+          this.lName = lName[i];
+          people += `<strong> ${this.lName}</strong>`;
+        }
+      }
+
+      this.people = people;
+    }
+
+    // Activates knockout.js
+    ko.applyBindings(new AppViewModel());
   </script>
-  </body>
+</body>
+
 </html>

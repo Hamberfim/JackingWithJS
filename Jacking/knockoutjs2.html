@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Simple Knockout js List and Collections</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+    </script>
+
+</head>
+
+<body>
+    <div class="container mt-5">
+        <div class="row row-cols-1">
+            <div class="col-md-12">
+                <!-- This is a *view* - HTML markup that defines the appearance of your UI -->
+                <h2>Your seat reservations</h2>
+                <table class="table table-responsive table-striped">
+                    <thead class="table-light">
+                        <tr>
+                            <th>Passenger name</th>
+                            <th>Meal</th>
+                            <th class="text-end">Surcharge</th>
+                        </tr>
+                    </thead>
+                    <!-- Todo: Generate table body -->
+                    <tbody data-bind="foreach: seats">
+                        <tr>
+                            <td data-bind="text: name" class="text-start"></td>
+                            <td data-bind="text: meal().mealName" class="text-start"></td>
+                            <td data-bind="text: meal().price" class="text-end"></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <button data-bind="click: addSeat" class="btn btn-dark btn-lg">Reserve Another Seat</button>
+            </div>
+        </div>
+    </div>
+    <!-- JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous">
+    </script>
+    <!-- knockout.js 3.5.1 -->
+    <script src="knockout-3.5.1.js"></script>
+    <script>
+        // Class to represent a row in the seat reservations grid
+        function SeatReservation(name, initialMeal) {
+            let self = this;
+            self.name = name;
+            self.meal = ko.observable(initialMeal);
+        }
+
+        // Overall viewmodel for this screen, along with initial state
+        function ReservationsViewModel() {
+            let self = this;
+
+            // Non-editable catalog data - would come from the server
+            self.availableMeals = [{
+                    mealName: "Basic (ham sandwich) ",
+                    price: 3.99
+                },
+                {
+                    mealName: "Standard (roast beef sandwich) ",
+                    price: 5.99
+                },
+                {
+                    mealName: "Premium (lobster roll) ",
+                    price: 34.99
+                },
+                {
+                    mealName: "Ultimate (whole zebra) ",
+                    price: 299.99
+                },
+                {
+                    mealName: "Mega-Meal (whole rhinoceros) ",
+                    price: 499.99
+                }
+            ];
+
+            // Editable data
+            self.seats = ko.observableArray([
+                new SeatReservation("Steve", self.availableMeals[0]),
+                new SeatReservation("Bert", self.availableMeals[1]),
+                new SeatReservation("Sam", self.availableMeals[2]),
+                new SeatReservation("Larry", self.availableMeals[3]),
+                new SeatReservation("Lord Fancyman", self.availableMeals[4])
+            ]);
+
+            // operations add reserved Seat
+            self.addSeat = function() {
+                self.seats.push(new SeatReservation("", self.availableMeals[1]));
+            }
+        }
+
+        ko.applyBindings(new ReservationsViewModel());
+    </script>
+</body>
+
+</html>
