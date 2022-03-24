@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Simple React - Not For Production</title>
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <!-- react cdn's -->
+    <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+
+    <!-- Babel cdn - Don't use this in production: -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row row-cols-1 my-4">
+            <div class="col-12-md">
+                <div id="base"></div>
+            </div>
+            <br><br><br>
+            <h3>Array List Names</h3>
+            <div class="m-2">
+                <ul id="looper">
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+    </script>
+
+    <!-- React.js in page script -->
+    <script type="text/babel">
+        const userName = "Hondo Revalletti";
+    let headerEL = <h1>Hey there, {userName}!</h1>;
+
+      ReactDOM.render(
+        headerEL, document.getElementById('base')
+      );
+
+    // create an array and loop thru it
+    const namesLoop = ["Jim", "John", "Tina", "Tanya", "Zoe", "Zaphanie"];
+
+    let people = "";
+
+    for (let i = 0; i < namesLoop.length; i++) {
+        let name = namesLoop[i];
+        people += `<li><h4>${name}</h4></li>`;
+        
+    }
+    
+    document.getElementById('looper').innerHTML = people;
+
+    
+
+    // ReactDOM.render(
+    //         people, document.getElementById('looper')
+    //   );
+
+    
+    
+
+
+    </script>
+    <!--  Note: 
+        This page is a great way to try React but it's not suitable for production.
+        It slowly compiles JSX with Babel in the browser and uses a large development build of React.
+
+        Read this section for a production-ready setup with JSX:
+        https://reactjs.org/docs/add-react-to-a-website.html#add-jsx-to-a-project
+
+        In a larger project, you can use an integrated toolchain that includes JSX instead:
+        https://reactjs.org/docs/create-a-new-react-app.html
+
+        You can also use React without JSX, in which case you can remove Babel:
+        https://reactjs.org/docs/react-without-jsx.html
+    -->
+</body>
+
+</html>

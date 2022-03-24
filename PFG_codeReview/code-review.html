@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Example</title>
+</head>
+<style>
+	body {
+		padding: 10px 10px 5px;
+	}
+
+	h1 {
+		margin-bottom: 15px;
+	}
+
+	form {
+		margin-bottom: 15px;
+
+		label {
+			/* font-weight: bold  orginal */
+            font-weight: bold;
+            
+			display: block;
+		}
+	}
+
+	#submit {
+		background-color: #094;
+		/* text-color: white;  original */
+        color: white;
+
+		/* -moz-border-radius: 3px; didn't have vendor specific prefixes fro all browsers*/
+        -moz-border-radius: 3px;
+        -webkit-border-radius: 3px;
+        border-radius: 3px;
+	}
+
+</style>
+<body>
+	<h1>Please <b>Log in</h1>
+	<form>
+		<label for="username">Username:</label>
+		<input type="text" name="username" class="js-username">
+		<label for="password">Password:</label>
+		<input type="text" name="password">
+		<button type="button" class="submit">Submit</button>
+	</form>
+	<script>
+		var button= document.querySelector("button")
+		button.addEventListener('click', validateUserNameAndPassword());
+
+		function validateUserNameAndPassword() {
+			userName = document.querySelector(".js-username").value;
+			password = document.querySelector(".js-password").value;
+
+			if (!userName.length||!password.length){
+				alert("You must fill out your username and password");
+				document.querySelector(".js-username").focus();
+			}
+		}
+	</script>
+</body>
+</html>
