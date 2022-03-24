@@ -18,3 +18,12 @@ elFirstLetter.textContent = firstLetter;
 
 let elMiddleOfName = document.getElementById('middleOfName');
 elMiddleOfName.textContent = middleOfName;
+
+let myIntCount = 12;
+let fixToDoubleCount = myIntCount.toFixed(2);
+
+let elMyIntCount = document.getElementById('myIntCount');
+elMyIntCount.textContent = myIntCount;
+
+let elFixToDoubleCount = document.getElementById('fixToDoubleCount');
+elFixToDoubleCount.textContent = fixToDoubleCount;
