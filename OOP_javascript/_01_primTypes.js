@@ -1,5 +1,6 @@
 "use strict";
 
+// first card
 // declare and initialize
 let myName = "ANTHONY";
 let lowercaseName = myName.toLowerCase();
@@ -38,3 +39,5 @@ let strFlag = flagTrue.toString();
 // display
 let elStrFlag = document.getElementById('strFlag');
 elStrFlag.textContent = strFlag;
+
+// second card
