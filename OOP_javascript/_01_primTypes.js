@@ -41,3 +41,12 @@ let elStrFlag = document.getElementById('strFlag');
 elStrFlag.textContent = strFlag;
 
 // second card
+let items = [" Bananas", " Oranges", " Apples", " Grapes"];
+let elItems =document.getElementById('fruit');
+elItems.textContent = items;
+
+let object = {"name": "Tony", "age": "55", "hobbies": [" Reading", " Photography", " Long-boarding"]};
+let elObject = document.getElementById('person');
+elObject.textContent = "Name: " + object.name.toString() 
+    + ", Age: " + object.age.toString() 
+    + ", Hobbies: " + object.hobbies.toString();
